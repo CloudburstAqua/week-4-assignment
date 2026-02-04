@@ -17,7 +17,7 @@
       Changing properties of circle shapes:
         https://css-tricks.com/the-shapes-of-css/
       -->
-    
+
     <section class="gallery">
       <!--  I couldn't find a less tedious way to make 100 circles...-->
       <div></div>
@@ -121,6 +121,26 @@
       <div></div>
       <div></div>
     </section>
+    <!--  Imp't that script comes AFTER the circles are made otherwise the circles aren't loaded first.-->
+    <script>
+      const circles = document.querySelectorAll('.gallery > div');
+      // Document refers to the entire HTML page
+      // .querySelectorAll finds every element that matches what's in function
+      // In this case, we want to select all divs that are children of .gallery
+      // Thus, all circle divs are selected and are stored in the variable const circles.
+      circles.forEach(circle => { //.forEach performs the action to all items/circles
+        const duration = Math.random() * 3 + 1; // Random animation length btwn 1–4 seconds
+        const delay = Math.random() * 5; // Random animation delay 0–5 seconds
+
+        circle.style.animationDuration = `${duration}s`; 
+        // circle.style allows JS to change the inline CSS
+        // `${duration}s` is a template string that inserts the duration and 's' for seconds for the animation duration in CSS.
+        circle.style.animationDelay = `${delay}s`;
+        // Same logic for the duration applies to the delay
+      }); // This function is applied once to every item in the list -- that is, every circle.
+      // The function runs 100 times for each circle
+    </script>
+
     <h1>LOADING</h1>
     <h3>Creative coding at work...</h3>
   </body>
