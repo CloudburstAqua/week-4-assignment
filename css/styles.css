@@ -1,3 +1,36 @@
-h1 {
-  color: red;
-}
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 10px;
+  }
+
+  .gallery>div {
+    background-color: black;
+    border: 2px solid black;
+    padding: 10px;
+    text-align: center;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%
+  }
+
+  @media (max-width: 600px) {
+    .gallery {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .gallery {
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .gallery {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+  }
