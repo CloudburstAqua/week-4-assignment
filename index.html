@@ -9,118 +9,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <!-- Reference Sources:
-      Responsive grid with circles: 
-        https://stackoverflow.com/questions/44892272/responsive-grid-made-out-of-circles
-      About the fr unit:
-        https://css-tricks.com/introduction-fr-css-unit/
-      Changing properties of circle shapes:
-        https://css-tricks.com/the-shapes-of-css/
+    <!-- 
+      REFERENCE SOURCES/URLS:
+        Responsive grid with circles: 
+          https://stackoverflow.com/questions/44892272/responsive-grid-made-out-of-circles
+        About the fr unit:
+          https://css-tricks.com/introduction-fr-css-unit/
+        Changing properties of circle shapes:
+          https://css-tricks.com/the-shapes-of-css/
+        Responsive text:
+          https://www.w3schools.com/howto/howto_css_responsive_text.asp
       -->
 
-    <section class="gallery">
-      <!--  I couldn't find a less tedious way to make 100 circles...-->
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </section>
+    <section class="gallery"></section>
+    <script>
+      const gallery = document.querySelector(".gallery");
+
+      for (let i = 0; i < 100; i++) { // for loop that runs 100 times to print out each circle
+        gallery.appendChild(document.createElement("div"));
+      }
+    </script>
+
+
     <!--  Imp't that script comes AFTER the circles are made otherwise the circles aren't loaded first.-->
     <script>
       const circles = document.querySelectorAll('.gallery > div');
@@ -132,7 +42,7 @@
         const duration = Math.random() * 3 + 1; // Random animation length btwn 1–4 seconds
         const delay = Math.random() * 5; // Random animation delay 0–5 seconds
 
-        circle.style.animationDuration = `${duration}s`; 
+        circle.style.animationDuration = `${duration}s`;
         // circle.style allows JS to change the inline CSS
         // `${duration}s` is a template string that inserts the duration and 's' for seconds for the animation duration in CSS.
         circle.style.animationDelay = `${delay}s`;
@@ -140,8 +50,13 @@
       }); // This function is applied once to every item in the list -- that is, every circle.
       // The function runs 100 times for each circle
     </script>
-
-    <h1>LOADING</h1>
-    <h3>Creative coding at work...</h3>
+    <div class="wave-container">
+      <h1 style="font-size:10vw;" class="wave-text">
+        <span>L</span><span>O</span><span>A</span><span>D</span><span>I</span><span>N</span><span>G</span>
+      </h1>
+    </div>
+    <h3 style="font-size:5vw;">
+      Creative coding at work...
+    </h3>
   </body>
 </html>
